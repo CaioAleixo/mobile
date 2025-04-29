@@ -1,19 +1,16 @@
-import { NavigationContainer } from '@react-navigation/native';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import NavegacaoPilha from './routes/NavegacaoPilha';
-import NavegacaoAbaInferior from './routes/NavegacaoAbaInferior';
-import NavegacaoAbaSuperior from './routes/NavegacaoAbaSuperior';
-import NavegacaoGaveta from './routes/NavegacaoGaveta';
-
+import { SafeAreaProvider } 
+  from "react-native-safe-area-context";
+import { AuthProvider } 
+  from "./contexts/AuthContext";
+import NavegacaoPrincipal 
+  from "./routes/NavegacaoPrincipal";
 
 function App() {
   return (
     <SafeAreaProvider>
-        <NavigationContainer>
-          <NavegacaoGaveta/>
-        </NavigationContainer>
+      <AuthProvider>
+        <NavegacaoPrincipal />
+      </AuthProvider>
     </SafeAreaProvider>
   );
 }
